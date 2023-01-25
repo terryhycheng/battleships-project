@@ -1,6 +1,7 @@
 $LOAD_PATH << "lib"
 require "game"
 require "user_interface"
+require "ship"
 
 class TerminalIO
   def gets
@@ -12,7 +13,9 @@ class TerminalIO
   end
 end
 
+ship_choices = [2, 3, 3, 4, 5].map { |length| Ship.new(length) }
+
 io = TerminalIO.new
-game = Game.new
+game = Game.new(ship_choices)
 user_interface = UserInterface.new(io, game)
 user_interface.run
