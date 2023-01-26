@@ -13,7 +13,7 @@ class TerminalIO
   end
 end
 
-ship_choices = [2, 3, 3, 4, 5].map { |length| Ship.new(length) }
+ship_choices = [2, 3].map { |length| Ship.new(length) }
 
 io = TerminalIO.new
 game = Game.new(ship_choices)
